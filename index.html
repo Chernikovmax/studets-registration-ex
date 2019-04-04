@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Student registration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="main-wrapper">
+  <h1 class="main-title">Add a new student's info here</h1>
+  <section class="subwrapper">
+    <form class="register-student">
+      <section class="register-student__form-field">
+        <span class="title">Last Name</span>
+        <input required autofocus class="input-info" type="text" name="last-name" placeholder="Ivanov" maxlength="30">
+      </section>
+      <section class="register-student__form-field">
+        <span class="title">First Name</span>
+        <input required class="input-info" type="text" name="first-name" placeholder="Ivan" maxlength="15">
+      </section>
+      <section class="register-student__form-field">
+        <span class="title">Patronymic</span>
+        <input required class="input-info" type="text" name="patronymic" placeholder="Ivanovich" maxlength="15">
+      </section>
+      <section class="register-student__form-field">
+        <label for="birthday" class="title">Birthday</label>
+        <input required class="input-info" id="birthday" type="date" name="birthday" maxlength="8"  min="1940-01-01" max="2005-31-12">
+      </section>
+      <section class="register-student__form-field">
+        <span class="title">Cource of study</span>
+        <select class="select-value" name="course-of-study">
+          <option selected value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </section>
+      <section class="register-student__form-field">
+        <span class="title">Group number</span>
+        <input required class="input-info" type="text" name="group-number" placeholder="ISA-123" maxlength="10">
+      </section>
+      <hr class="line">
+      <section class="register-student__form-field subjects-wrapper">
+        <span class="title subject-title">English</span>
+        <select class="select-value" name="english">
+          <option selected value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+        </select>
+      </section>
+      <section class="register-student__form-field subjects-wrapper">
+        <span class="title subject-title">Geometry and algebra</span>
+        <select class="select-value" name="geometry-algebra">
+          <option selected value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+        </select>
+      </section>
+      <section class="register-student__form-field subjects-wrapper">
+        <span class="title subject-title">Mathematical analysis</span>
+        <select class="select-value" name="math-analysis">
+          <option selected value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+        </select>
+      </section>
+      <section class="register-student__form-field subjects-wrapper">
+        <span class="title subject-title">Physics</span>
+        <select class="select-value" name="physics">
+          <option selected value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+        </select>
+      </section>
+      <section class="register-student__form-field subjects-wrapper">
+        <span class="title subject-title">Computer science</span>
+        <select class="select-value" name="computer-science">
+          <option selected value="5">5</option>
+          <option value="4">4</option>
+          <option value="3">3</option>
+          <option value="2">2</option>
+        </select>
+      </section>
+      <button id="submit-btn" class="register-student__submit-btn" type="submit">Register student</button>
+    </form>
+  </section>
+</div>
+
+<button onclick="toggleModalbox()" class="modalbox-open-btn">Show List of students</button>
+
+<div class="modalbox-container">
+  <a class="modalbox__background"></a>
+  <section class="modalbox">
+    <section class="modalbox__header">
+      <select class="open-course-select" name="open-a-course-list" onchange="onCourseChanged()">
+        <option selected value="0">Choose a course num</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+      <button onclick="clearAndCloseModal()" class="modalbox__close-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 80 80" style="enable-background:new 0 0 80 80;" xml:space="preserve" width="90%" height="90%">
+        <g>
+        	<polygon style="fill:#fff;" points="40,49.007 15.714,73.293 6.707,64.286 30.993,40 6.707,15.714 15.714,6.707 40,30.993    64.286,6.707 73.293,15.714 49.007,40 73.293,64.286 64.286,73.293  "/>
+        	<path style="fill:#fff;" d="M15.714,7.414l23.578,23.578L40,31.7l0.707-0.707L64.286,7.414l8.3,8.3L49.007,39.293L48.3,40   l0.707,0.707l23.578,23.579l-8.3,8.3L40.707,49.007L40,48.3l-0.707,0.707L15.714,72.586l-8.3-8.3l23.579-23.579L31.7,40   l-0.707-0.707L7.414,15.714L15.714,7.414 M64.286,6L40,30.286L15.714,6L6,15.714L30.286,40L6,64.286L15.714,74L40,49.714L64.286,74   L74,64.286L49.714,40L74,15.714L64.286,6L64.286,6z"/>
+        </g>
+        </svg>
+      </button>
+    </section>
+    <section class="modalbox__content">
+      <table class="table-students" cols="9">
+        <caption class="table__title">
+          Students studying on the selected course
+        </caption>
+        <thead class="table__header">
+          <tr class="table__row">
+            <th class="table__cell" rowspan="2">№</th>
+            <th class="table__cell" rowspan="2">Full Name of student</th>
+            <th class="table__cell" rowspan="2">Year of birth</th>
+            <th class="table__cell" rowspan="2">Group number</th>
+            <th class="table__cell" colspan="5">Points by Subjects</th>
+          </tr>
+          <tr class="table__row">
+            <th class="table__cell">English</th>
+            <th class="table__cell">Geometry and algebra</th>
+            <th class="table__cell">Mathematical analysis</th>
+            <th class="table__cell">Physics</th>
+            <th class="table__cell">Computer science</th>
+          </tr>
+        </thead>
+        <tbody class="table__body">
+        </tbody>
+      </table>
+    </section>
+  </section>
+</div>
+
+<script type="text/javascript" src="scripts/DoublyLinkedList.js"></script>
+<script type="text/javascript" src="scripts/Student.js"></script>
+<script type="text/javascript" src="scripts/renderMethods.js"></script>
+</body>
+</html>

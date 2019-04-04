@@ -1,0 +1,261 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  max-height: auto;
+  background-color: rgb(246, 237, 198);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-family: 'calibri';
+}
+
+.main-wrapper {
+  min-height: 90vh;
+  min-width: 350px;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  background-color: rgb(233, 195, 110);
+  border-radius: 20px;
+}
+
+.subwrapper {
+  margin-top: 1rem;
+  min-height: 75vh;
+  width: 300px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: rgb(255, 247, 212);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.main-title {
+  margin: 0;
+  color: #fff;
+}
+
+.register-student-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 67vh;
+  max-height: 72vh;
+  width: 95%;
+  margin-bottom: 10px;
+}
+
+.register-student__form-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.title {
+  padding-top: 5px;
+  height: 30px;
+  width: 130px;
+  color: rgb(84, 59, 11);
+}
+
+.subject-title {
+  width: 170px;
+  margin-right: 80px;
+}
+
+.input-info {
+  height: 30px;
+  width: 150px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  padding-left: 15px;
+}
+
+.select-value {
+  width: 50px;
+  height: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  padding-left: 10px;
+  font-size: 0.8rem;
+}
+
+.line {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-color: rgb(96, 63, 0);
+  size: 3px;
+}
+
+.register-student__submit-btn {
+  margin-top: 2rem;
+  margin-left: 170px;
+  width: 130px;
+  min-height: 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(96, 63, 0);
+  color: rgb(231, 228, 222);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.register-student__submit-btn:hover {
+  background-color: rgb(125, 83, 3);
+  color: #fff;
+}
+
+.modalbox-open-btn {
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  left: 0;
+  width: 130px;
+  height: 37px;
+  border: none;
+  border-top-right-radius: 5px;
+  background-color: rgb(96, 63, 0);
+  color: rgb(231, 228, 222);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.modalbox-open-btn:hover {
+  background-color: rgb(125, 83, 3);
+  color: #fff;
+}
+
+.modalbox-container {
+  display: none;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+}
+
+.modalbox--active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalbox__background {
+  display: block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0,0,0, 0.7);
+}
+
+.modalbox {
+  position: fixed;
+  top: 2.5%;
+  height: 95%;
+  width: 90%;
+  border-radius: 5px;
+  background-color: rgb(230, 219, 193);
+  z-index: 20;
+}
+
+.modalbox__header {
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.open-course-select {
+  min-width: 5rem;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  padding-left: 5px;
+  font-size: 0.8rem;
+}
+
+.modalbox__close-btn {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  right: 0;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: rgb(237, 106, 12);
+}
+
+.modalbox__close-btn:hover {
+  background-color: rgb(237, 66, 12);
+}
+
+.modalbox__close-btn:hover .cross {
+  color: #fff;
+}
+
+.modalbox__content {
+  height: 85%;
+  width: 95%;
+  margin-left: 2.5%;
+  overflow-y: auto;
+}
+
+.table-students {
+  height: 93%;
+  width: 100%;
+  border: 1px solid rgb(96, 63, 0);
+  border-collapse: collapse;
+}
+
+.table__title {
+  height: 30px;
+  color: rgb(56, 41, 6);
+  font-size: 1.1rem;
+}
+
+.table__header {
+  background-color: rgb(246, 240, 230);
+}
+
+.table__body {
+  background-color: rgb(255, 255, 255);
+}
+
+.table__body > tr{
+  height: auto;
+}
+
+.table__cell {
+  vertical-align: top;
+  text-align: center;
+  border: 1px solid rgb(96, 63, 0);
+}
+
+.center-column-align {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  border-top: 1px solid rgb(96, 63, 0);
+}
+
+.delete-student-btn {
+  border: none;
+  background-color: transparent;
+  height: 35px;
+  width: 32px;
+}
